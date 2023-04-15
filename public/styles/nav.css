@@ -1,22 +1,22 @@
-body {
-  
-}
 nav {
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
- height: 120 px;
+  height: 120 px;
   width: 100vw;
   background-color: #4056a1;
   color: #ffffff;
   padding: 0 1.5em;
 }
 
-.logo{
-  padding-top: 20px;
+.logo {
+  padding-top: 35px;
 }
-.write-tweet{
+.write-tweet {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }

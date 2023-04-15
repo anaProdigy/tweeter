@@ -1,7 +1,22 @@
 body {
-  height: 120 px;
+  
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ height: 120 px;
   width: 100vw;
   background-color: #4056a1;
-  color:#FFFFFF ;
+  color: #ffffff;
   padding: 0 1.5em;
+}
+
+.logo{
+  padding-top: 20px;
+}
+.write-tweet{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

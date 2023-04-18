@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+button {
+  background-color: #4056a1;
+  color: #ffffff;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+
+  padding-top: 10px;
+}
+
+textarea {
+  height: 60px;
+  background: transparent;
+  border: #f4f1ec;
+  resize: none;
+  border-bottom: 5px solid black;
+}
+textarea:focus{
+    outline: 0;
+}

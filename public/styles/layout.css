@@ -27,3 +27,9 @@ body {
 nav .logo {
   font-family: "Bungee", cursive;
 }
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
+}

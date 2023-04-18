@@ -33,3 +33,7 @@ nav .logo {
   margin: 0 auto;
   background-color: inherit;
 }
+
+.page-footer {
+  height: 100px;
+}

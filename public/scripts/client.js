@@ -47,7 +47,7 @@ const createTweetElement = (tweetObj) => {
   const $tweetText = $(`<div class="tweet-text">${tweetObj.content.text}</div>`);
 
   const $footer = $(`<footer></footer>`);
-  const $tweetDaysAgo = $(`<div class="tweet-days-ago">${tweetObj.created_at} days ago</div>`);
+  const $tweetDaysAgo = $(`<div class="tweet-days-ago">${timeago.format(tweetObj.created_at)}</div>`);
   const $otherIcons = $(`<div><i class="fa-solid fa-flag fa-2xs" style="color: #1151c0;"></i>
     <i class="fa-solid fa-retweet fa-2xs" style="color: #1151c0;"></i>
     <i class="fa-solid fa-heart fa-2xs"style="color: #1151c0;" ></i></div>`);
@@ -80,9 +80,8 @@ $(document).ready(function() {
         //set char count 140
         $(".counter").text(140);
         console.log("HEllo", res);
-        //loadTweets();
-        //defets the purpose???reloads the page
-        location.reload()
+        loadTweets();
+        
       },
       error: function(err) {
         console.log(err);
@@ -97,10 +96,12 @@ $(document).ready(function() {
       type: 'GET',
 
     }).then(res => {
+      //empties the html
+      $(".all-tweets").empty();
       renderTweets(res);
     });
   };
-  loadTweets();
+  loadTweets(); 
 });
 
 

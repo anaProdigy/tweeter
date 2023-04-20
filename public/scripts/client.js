@@ -64,12 +64,10 @@ const createTweetElement = (tweetObj) => {
 };
 
 $(document).ready(function() {
-  renderTweets(data);
 
   $("form").submit(function(event) {
     event.preventDefault();
 
-    //console.log($(this).serialize());
     let formData = $(this).serialize();
 
     $.ajax({
@@ -77,22 +75,30 @@ $(document).ready(function() {
       url: "/tweets",
       data: formData,
       success: function(res) {
-        $("textarea").val("")
-        $(".counter").text(140)
         //clear field
+        $("textarea").val("");
         //set char count 140
-        //display the new tweets
-        //clear errors
-        console.log("HEllo", res)
+        $(".counter").text(140);
+        console.log("HEllo", res);
+        loadTweets();
       },
-      error: function (err) {
-        console.log(err)
+      error: function(err) {
+        console.log(err);
       }
+      
     });
-
-   
-
   });
+  //display the new tweets
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets",
+      type: 'GET',
+
+    }).then(res => {
+      renderTweets(res);
+    });
+  };
+  loadTweets();
 });
 
 

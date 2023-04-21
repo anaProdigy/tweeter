@@ -1,3 +1,7 @@
+.new-tweet  {
+   display: none;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -14,11 +18,6 @@ form {
 			background-color: #FFBABA;
 			background-image: url('https://i.imgur.com/GnyDvKN.png');
 		}
-
-.new-tweet  {
-   display: none;
-}
-
 
 button {
   background-color: #4056a1;

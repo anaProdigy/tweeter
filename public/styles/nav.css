@@ -10,16 +10,16 @@ nav {
   color: #ffffff;
   padding: 0 1.5em;
 }
-.fa-angles-down {
-  transition: 0.3s;
-}
-.fa-angles-down: hover {
-   transform: translate(0, -10px);
+
+.arrow-button {
+  border: none;
+  
 }
 
 .logo {
   padding-top: 35px;
 }
+
 .write-tweet {
   display: flex;
   flex-direction: column;

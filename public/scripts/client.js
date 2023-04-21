@@ -2,7 +2,6 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-
   for (const tweet of tweets) {
     const $tweetEl = createTweetElement(tweet);
     $(".all-tweets").prepend($tweetEl);
@@ -13,13 +12,12 @@ const createTweetElement = (tweetObj) => {
 
   const $tweet = $(`<article class="tweet"></article>`);
   const $header = $(`<header></header>`);
-  const $tweetIconName = $(`<div class="tweet-icon">  </div`);
+  const $tweetIconName = $(`<div class="tweet-icon"></div`);
 
-  //avaar doesnt show
   const $avatar = $(` <img src=${tweetObj.user.avatars} />`);
   const $tweetName = $(`<div class="tweet-name">${tweetObj.user.name}</div>`);
   const $tweetUserName = $(`<div class="tweet-username">${tweetObj.user.handle}</div>`);
-// avoid vulnarability, will pass a string
+  // avoid vulnarability, will pass a string
   const $tweetText = $(`<div class="tweet-text"></div>`);
   const contentElm = $(`<div>${tweetObj.content.text}</div>`);
   $tweetText.append(contentElm.text());
@@ -41,13 +39,17 @@ const createTweetElement = (tweetObj) => {
   return $tweet;
 };
 
-
 $(document).ready(function() {
+//bounce icon on hover
+  $('.fa-angles-down').hover(function() {
+    $(this).addClass('fa-bounce');
+  }, function() {
+    $(this).removeClass('fa-bounce');
+  });
 
   $("form").submit(function(event) {
     event.preventDefault();
-
-    console.log($("#tweet-text").val());
+//show arror messages if empty field of too many chars
     if ($("#tweet-text").val().length === 0) {
 
       $('.errorMsg1').slideDown();
@@ -61,7 +63,7 @@ $(document).ready(function() {
 
       $('.errorMsg1').slideUp();
       $('.errorMsg2').slideUp();
-
+//if no errors post the tweet
       let formData = $(this).serialize();
       $.ajax({
         type: "POST",
@@ -74,11 +76,7 @@ $(document).ready(function() {
           $(".counter").text(140);
           console.log("HEllo", res);
           loadTweets();
-
         },
-        error: function(err) {
-          console.log(err);
-        }
 
       });
     }
@@ -97,15 +95,30 @@ $(document).ready(function() {
     });
   };
   loadTweets();
-
-
-  $(".fa-angles-down").click(function() {
+  //show form on click and place cursor in textarea
+  $(".arrow-button").click(function() {
     $('.new-tweet').slideToggle();
     $("#tweet-text").focus();
-    
   });
- 
-
+  //action on scrolling
+  $(window).scroll(function() {
+    //changes when scrolling down
+    if ($(document).scrollTop() > 50) {
+      $(".buttonUp").css("display", "inline");
+      $(".write-tweet").css("display", "none");
+      $("nav").css("background-color", "transparent");
+      //changes when scrolling up
+    } else {
+      $(".buttonUp").css("display", "none");
+      $(".write-tweet").css("display", "inline");
+      $("nav").css("background-color", " #4056a1");
+    }
+  });
+  //scroll up on click
+  $('.buttonUp').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 800);
+    return false;
+  });
 });
 
 

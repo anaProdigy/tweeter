@@ -27,9 +27,9 @@ const createTweetElement = (tweetObj) => {
 
   const $footer = $(`<footer></footer>`);
   const $tweetDaysAgo = $(`<div class="tweet-days-ago">${timeago.format(tweetObj.created_at)}</div>`);
-  const $otherIcons = $(`<div><i class="fa-solid fa-flag fa-2xs" style="color: #1151c0;"></i>
-    <i class="fa-solid fa-retweet fa-2xs" style="color: #1151c0;"></i>
-    <i class="fa-solid fa-heart fa-2xs"style="color: #1151c0;" ></i></div>`);
+  const $otherIcons = $(`<div><i class="fa-solid fa-flag fa-2xs icon" style="color: #1151c0;"></i>
+    <i class="fa-solid fa-retweet fa-2xs icon" style="color: #1151c0;"></i>
+    <i class="fa-solid fa-heart fa-2xs icon"style="color: #1151c0;" ></i></div>`);
 
   $tweet.append($header);
   $tweet.append($tweetText);
@@ -40,6 +40,7 @@ const createTweetElement = (tweetObj) => {
 
   return $tweet;
 };
+
 
 $(document).ready(function() {
 
@@ -100,8 +101,11 @@ $(document).ready(function() {
 
   $(".fa-angles-down").click(function() {
     $('.new-tweet').slideToggle();
+    $("#tweet-text").focus();
     
   });
+ 
+
 });
 
 

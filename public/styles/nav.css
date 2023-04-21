@@ -1,4 +1,5 @@
 nav {
+
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -8,6 +9,12 @@ nav {
   background-color: #4056a1;
   color: #ffffff;
   padding: 0 1.5em;
+}
+.fa-angles-down {
+  transition: 0.3s;
+}
+.fa-angles-down: hover {
+   transform: translate(0, -10px);
 }
 
 .logo {

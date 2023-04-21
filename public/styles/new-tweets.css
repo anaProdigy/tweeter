@@ -33,6 +33,7 @@ button {
 }
 
 textarea {
+  focus:auto;
   height: 60px;
   background: transparent;
   border: #f4f1ec;
@@ -41,4 +42,5 @@ textarea {
 }
 textarea:focus{
     outline: 0;
+    
 }

@@ -15,7 +15,9 @@ form {
 			background-image: url('https://i.imgur.com/GnyDvKN.png');
 		}
 
-
+.new-tweet  {
+   display: none;
+}
 
 
 button {

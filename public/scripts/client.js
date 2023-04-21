@@ -48,14 +48,16 @@ $(document).ready(function() {
 
     console.log($("#tweet-text").val());
     if ($("#tweet-text").val().length === 0) {
-      // const $errorMsg1 = $('form').before('<p>Please type a tweet!</p>')
-      // $errorMsg1.slideDown()
+
       $('.errorMsg1').slideDown();
+
     } else if ($("#tweet-text").val().length > 140) {
+
       $('.errorMsg1').slideUp();
       $(".errorMsg2").slideDown();
 
     } else {
+
       $('.errorMsg1').slideUp();
       $('.errorMsg2').slideUp();
 
@@ -94,6 +96,12 @@ $(document).ready(function() {
     });
   };
   loadTweets();
+
+
+  $(".fa-angles-down").click(function() {
+    $('.new-tweet').slideToggle();
+    
+  });
 });
 
 

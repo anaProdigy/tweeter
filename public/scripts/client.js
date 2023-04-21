@@ -1,28 +1,3 @@
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ];
 const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -35,12 +10,13 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = (tweetObj) => {
+  
   const $tweet = $(`<article class="tweet"></article>`);
   const $header = $(`<header></header>`);
   const $tweetIconName = $(`<div class="tweet-icon">  </div`);
 
   //avaar doesnt show
-  const $icon = $(` <img src=${tweetObj.user.avatars} />`);
+  const $avatar = $(` <img src=${tweetObj.user.avatars} />`);
   const $tweetName = $(`<div class="tweet-name">${tweetObj.user.name}</div>`);
   const $tweetUserName = $(`<div class="tweet-username">${tweetObj.user.handle}</div>`);
 
@@ -51,14 +27,13 @@ const createTweetElement = (tweetObj) => {
   const $otherIcons = $(`<div><i class="fa-solid fa-flag fa-2xs" style="color: #1151c0;"></i>
     <i class="fa-solid fa-retweet fa-2xs" style="color: #1151c0;"></i>
     <i class="fa-solid fa-heart fa-2xs"style="color: #1151c0;" ></i></div>`);
-
+  
   $tweet.append($header);
   $tweet.append($tweetText);
   $tweet.append($footer);
   $header.append($tweetIconName, $tweetUserName);
-  $tweetIconName.append($icon, $tweetName);
+  $tweetIconName.append($avatar, $tweetName);
   $footer.append($tweetDaysAgo, $otherIcons);
-
 
   return $tweet;
 };
@@ -70,12 +45,17 @@ $(document).ready(function() {
 
     console.log($("#tweet-text").val())
     if ($("#tweet-text").val().length === 0) {
-      alert("Please type a tweet!");
-      
+      // const $errorMsg1 = $('form').before('<p>Please type a tweet!</p>')
+      // $errorMsg1.slideDown()
+      $('.errorMsg1').slideDown();
     } else if ($("#tweet-text").val().length > 140) {
-      alert("Your tweet can be no more that 140 characters");
+      $('.errorMsg1').slideUp()
+      // const $errorMsg2 = $('form').before('<p>Your tweet can be no more that 140 characters.</p>')
+      $(".errorMsg2").slideDown()
       
     } else {
+      $('.errorMsg1').slideUp()
+      $('.errorMsg2').slideUp()
       let formData = $(this).serialize();
     $.ajax({
       type: "POST",
@@ -105,7 +85,7 @@ $(document).ready(function() {
       type: 'GET',
 
     }).then(res => {
-      //empties the html
+      //empties the html, prevents from refreshing the page
       $(".all-tweets").empty();
       renderTweets(res);
     });

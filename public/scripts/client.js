@@ -68,8 +68,15 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    let formData = $(this).serialize();
-
+    console.log($("#tweet-text").val())
+    if ($("#tweet-text").val().length === 0) {
+      alert("Please type a tweet!");
+      
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("Your tweet can be no more that 140 characters");
+      
+    } else {
+      let formData = $(this).serialize();
     $.ajax({
       type: "POST",
       url: "/tweets",
@@ -87,8 +94,10 @@ $(document).ready(function() {
         console.log(err);
       }
       
-    });
+    })
+  }
   });
+
   //display the new tweets
   const loadTweets = () => {
     $.ajax({

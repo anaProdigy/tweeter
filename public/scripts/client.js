@@ -10,7 +10,7 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = (tweetObj) => {
-  
+
   const $tweet = $(`<article class="tweet"></article>`);
   const $header = $(`<header></header>`);
   const $tweetIconName = $(`<div class="tweet-icon">  </div`);
@@ -19,15 +19,18 @@ const createTweetElement = (tweetObj) => {
   const $avatar = $(` <img src=${tweetObj.user.avatars} />`);
   const $tweetName = $(`<div class="tweet-name">${tweetObj.user.name}</div>`);
   const $tweetUserName = $(`<div class="tweet-username">${tweetObj.user.handle}</div>`);
+// avoid vulnarability, will pass a string
+  const $tweetText = $(`<div class="tweet-text"></div>`);
+  const contentElm = $(`<div>${tweetObj.content.text}</div>`);
+  $tweetText.append(contentElm.text());
 
-  const $tweetText = $(`<div class="tweet-text">${tweetObj.content.text}</div>`);
 
   const $footer = $(`<footer></footer>`);
   const $tweetDaysAgo = $(`<div class="tweet-days-ago">${timeago.format(tweetObj.created_at)}</div>`);
   const $otherIcons = $(`<div><i class="fa-solid fa-flag fa-2xs" style="color: #1151c0;"></i>
     <i class="fa-solid fa-retweet fa-2xs" style="color: #1151c0;"></i>
     <i class="fa-solid fa-heart fa-2xs"style="color: #1151c0;" ></i></div>`);
-  
+
   $tweet.append($header);
   $tweet.append($tweetText);
   $tweet.append($footer);
@@ -43,39 +46,39 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    console.log($("#tweet-text").val())
+    console.log($("#tweet-text").val());
     if ($("#tweet-text").val().length === 0) {
       // const $errorMsg1 = $('form').before('<p>Please type a tweet!</p>')
       // $errorMsg1.slideDown()
       $('.errorMsg1').slideDown();
     } else if ($("#tweet-text").val().length > 140) {
-      $('.errorMsg1').slideUp()
-      // const $errorMsg2 = $('form').before('<p>Your tweet can be no more that 140 characters.</p>')
-      $(".errorMsg2").slideDown()
-      
+      $('.errorMsg1').slideUp();
+      $(".errorMsg2").slideDown();
+
     } else {
-      $('.errorMsg1').slideUp()
-      $('.errorMsg2').slideUp()
+      $('.errorMsg1').slideUp();
+      $('.errorMsg2').slideUp();
+
       let formData = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: formData,
-      success: function(res) {
-        //clear field
-        $("textarea").val("");
-        //set char count 140
-        $(".counter").text(140);
-        console.log("HEllo", res);
-        loadTweets();
-        
-      },
-      error: function(err) {
-        console.log(err);
-      }
-      
-    })
-  }
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: formData,
+        success: function(res) {
+          //clear field
+          $("textarea").val("");
+          //set char count 140
+          $(".counter").text(140);
+          console.log("HEllo", res);
+          loadTweets();
+
+        },
+        error: function(err) {
+          console.log(err);
+        }
+
+      });
+    }
   });
 
   //display the new tweets
@@ -90,7 +93,7 @@ $(document).ready(function() {
       renderTweets(res);
     });
   };
-  loadTweets(); 
+  loadTweets();
 });
 
 

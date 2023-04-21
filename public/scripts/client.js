@@ -30,7 +30,7 @@ const renderTweets = function(tweets) {
 
   for (const tweet of tweets) {
     const $tweetEl = createTweetElement(tweet);
-    $(".all-tweets").append($tweetEl);
+    $(".all-tweets").prepend($tweetEl);
   }
 };
 

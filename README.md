@@ -22,9 +22,9 @@ HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, Express on the back-e
 
 ## Final Product
 
-!["Screenshot of URLs page"](https://github.com/anaProdigy/tyniapp/blob/master/docs/urls-page.png)
-!["Screenshot of creating new short URL page"](https://github.com/anaProdigy/tyniapp/blob/master/docs/urls-new.png)
-!["Screenshot of register page"](https://github.com/anaProdigy/tyniapp/blob/master/docs/register-page.png)
+!["Screenshot of tablet view"](https://github.com/anaProdigy/tweeter/blob/master/docs/tablet-view.png)
+!["Screenshot of desctop view"](https://github.com/anaProdigy/tweeter/blob/master/docs/desktop-view.png)
+!["Screenshot of scrolling down"](https://github.com/anaProdigy/tweeter/blob/master/docs/desctop-scroll.png)
 
 
 

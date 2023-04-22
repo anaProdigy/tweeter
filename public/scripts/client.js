@@ -125,8 +125,5 @@ $(document).ready(function() {
     $('html, body').animate({ scrollTop: 0 }, 800);
     return false;
   });
-//??????
-  // $(".name").text(tweetObj.user.name)
+
 });
-
-

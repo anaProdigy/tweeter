@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -16,6 +15,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -28,7 +28,7 @@ nav .logo {
   font-family: "Bungee", cursive;
 }
 
-.container {
+.container{
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
@@ -39,7 +39,9 @@ nav .logo {
 }
 
 @media only screen and (min-width: 1024px) {
-  body {
+   body{
     display: flex;
+   }
   }
-}
+
+  

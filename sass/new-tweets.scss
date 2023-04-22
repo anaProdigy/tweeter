@@ -1,0 +1,50 @@
+.new-tweet  {
+   display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.errorMsg1, .errorMsg2 {
+  display: none;
+  border: 1px solid;
+			margin: 10px 0px;
+			padding: 15px 10px 15px 50px;
+			background-repeat: no-repeat;
+			background-position: 10px center;
+      color: #D8000C;
+			background-color: #FFBABA;
+			background-image: url('https://i.imgur.com/GnyDvKN.png');
+		}
+
+button {
+  background-color: #4056a1;
+  color: #ffffff;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+
+  padding-top: 10px;
+}
+
+textarea {
+  height: 60px;
+  background: transparent;
+  border: #f4f1ec;
+  resize: none;
+  border-bottom: 5px solid black;
+}
+textarea:focus{
+    outline: 0;
+}
+
+ @media only screen and (min-width: 1024px) {
+    form {
+  margin-top: 100px;
+}
+  }

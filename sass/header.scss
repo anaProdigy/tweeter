@@ -1,0 +1,35 @@
+.page-header {
+  height: 520px;
+  width: 100%;
+  padding-top: 120px;
+  background-color: #00789c;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+}
+
+.avatar {
+ display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 1024px) {
+   .page-header{
+     margin-top: 180px;
+    margin-left: 80px;
+    margin-right: 200px;
+    padding-top: 50px;
+    height: 400px;
+   }
+
+   .name h2 {
+    margin:0;
+   }
+  }
+   

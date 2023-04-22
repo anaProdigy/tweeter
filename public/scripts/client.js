@@ -21,7 +21,7 @@ const createTweetElement = (tweetObj) => {
   const $tweetText = $(`<div class="tweet-text"></div>`);
   const contentElm = $(`<div>${tweetObj.content.text}</div>`);
   $tweetText.append(contentElm.text());
-
+$(".name").text(tweetObj.user.name)
 
   const $footer = $(`<footer></footer>`);
   const $tweetDaysAgo = $(`<div class="tweet-days-ago">${timeago.format(tweetObj.created_at)}</div>`);
@@ -40,6 +40,7 @@ const createTweetElement = (tweetObj) => {
 };
 
 $(document).ready(function() {
+  
 //bounce icon on hover
   $('.fa-angles-down').hover(function() {
     $(this).addClass('fa-bounce');
@@ -105,13 +106,18 @@ $(document).ready(function() {
     //changes when scrolling down
     if ($(document).scrollTop() > 50) {
       $(".buttonUp").css("display", "inline");
-      $(".write-tweet").css("display", "none");
-      $("nav").css("background-color", "transparent");
+      let $containerWidth = $(window).width();
+      //check the width of the screen for responsive design
+      if ($containerWidth <= 1024) {
+        $(".write-tweet").css("display", "none");
+      }
+      if (($containerWidth >1025)){
+        return;
+      }
       //changes when scrolling up
     } else {
       $(".buttonUp").css("display", "none");
       $(".write-tweet").css("display", "inline");
-      $("nav").css("background-color", " #4056a1");
     }
   });
   //scroll up on click
@@ -119,6 +125,8 @@ $(document).ready(function() {
     $('html, body').animate({ scrollTop: 0 }, 800);
     return false;
   });
+//??????
+  // $(".name").text(tweetObj.user.name)
 });
 
 

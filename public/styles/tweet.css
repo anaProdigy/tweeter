@@ -67,5 +67,13 @@ article.tweet footer {
   padding: 20px;
   border-radius: 50%;
 }
+ @media only screen and (min-width: 1024px) {
+  .container{
+    margin-right: 30px;
+  }
+   .all-tweets{
+   margin-top: 80px;
+   }
+  }
 
-
+ 

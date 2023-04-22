@@ -37,3 +37,9 @@ nav .logo {
 .page-footer {
   height: 100px;
 }
+
+@media only screen and (min-width: 1024px) {
+   body{
+    display: flex;
+   }
+  }

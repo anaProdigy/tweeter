@@ -20,10 +20,10 @@
 
 @media only screen and (min-width: 1024px) {
   .page-header {
-    margin-top: 180px;
-    margin-left: 80px;
-    margin-right: 200px;
+    width: 40%;
     padding-top: 50px;
+    margin: 30px;
+    margin-top: 180px;
     height: 400px;
   }
   .name h2 {

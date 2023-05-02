@@ -27,7 +27,10 @@ body {
 nav .logo {
   font-family: "Bungee", cursive;
 }
-
+.main-container {
+   display: flex;
+   flex-direction: column;
+}
 .container {
   width: 90%;
   margin: 0 auto;
@@ -39,7 +42,10 @@ nav .logo {
 }
 
 @media only screen and (min-width: 1024px) {
-  body {
-    display: flex;
+  .main-container {
+    flex-direction: row;
+  }
+  .container {
+    width: 50%;
   }
 }

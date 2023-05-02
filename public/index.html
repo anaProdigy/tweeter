@@ -42,7 +42,12 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
 
   <body>
@@ -51,43 +56,52 @@
       <div class="logo">Tweeter</div>
       <div class="write-tweet">
         Write a new tweet
-        <button class ="arrow-button"><i class="fa-solid fa-angles-down " style="color: #e81717"></i>
-      </button>
+        <button class="arrow-button">
+          <i class="fa-solid fa-angles-down" style="color: #e81717"></i>
+        </button>
       </div>
     </nav>
 
-    <header class="page-header">
-      <div class="avatar">
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div class="name">
-        <h2></h2>
-      </div>
-    </header>
+    <div class="main-container">
+      <header class="page-header">
+        <div class="avatar">
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div class="name">
+          <h2></h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <p class="errorMsg1">Please type a tweet!</p>
-        <p class="errorMsg2">Your tweet can be no more that 140 characters.</p>
-        <form>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea
-            class="new-tweet-text"
-            name="text"
-            id="tweet-text"
-          ></textarea>
-          <div class="bottom">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section class="all-tweets">
-      </section>
-      <button class="buttonUp"><i class="fa-solid fa-angles-up " style="color: white"></i></button>
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <p class="errorMsg1">Please type a tweet!</p>
+          <p class="errorMsg2">
+            Your tweet can be no more that 140 characters.
+          </p>
+          <form>
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea
+              class="new-tweet-text"
+              name="text"
+              id="tweet-text"
+            ></textarea>
+            <div class="bottom">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <section class="all-tweets"></section>
+        <button class="buttonUp">
+          <i class="fa-solid fa-angles-up" style="color: white"></i>
+        </button>
+      </main>
+    </div>
+    
     <footer class="page-footer"></footer>
   </body>
 </html>

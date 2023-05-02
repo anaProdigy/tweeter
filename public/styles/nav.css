@@ -2,11 +2,12 @@ nav {
   position: fixed;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   height: 120 px;
   width: 100vw;
   color: #ffffff;
-  padding: 0 1.5em;
+  padding:  1.5em;
 }
 
 .arrow-button {
@@ -14,17 +15,20 @@ nav {
   background-color: transparent;
 }
 
-.logo {
-  padding-top: 35px;
-}
-
 .write-tweet {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  padding-top: 15px;
-  padding-bottom: 5px;
 }
+.display-on{
+  display: flex;
+  flex-direction: column;
+}
+.display-off{
+  display: none;
+}
+/* .display-button(
+  display: inline;
+) */
 
 @media only screen and (min-width: 1024px) {
   nav {

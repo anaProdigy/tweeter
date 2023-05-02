@@ -40,6 +40,7 @@ article.tweet header {
   padding-left: 15px;
   padding-right: 15px;
   border-bottom: 2px solid black;
+  word-wrap: break-word;
 }
 
 .tweet-days-ago {
@@ -76,6 +77,6 @@ article.tweet footer {
     margin-right: 30px;
   }
   .all-tweets {
-    margin-top: 80px;
+    margin-top: 180px;
   }
 }
